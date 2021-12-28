@@ -1,1 +1,8 @@
-<p>shoping-list works!</p>
+<div class="row">
+    <div class="row">
+        <a class="list-group-item list-group-item-secondary" *ngFor="let ingredient of ingredients">
+            {{ingredient.name}} ({{ingredient.amount}})
+        </a>
+    </div>
+</div>
+

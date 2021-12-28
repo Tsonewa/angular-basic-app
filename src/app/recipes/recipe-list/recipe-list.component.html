@@ -1,1 +1,18 @@
-<p>recipe-list works!</p>
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btb btn-success">Add recipe</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="row gx-12">
+        <div class="card" style="width: 18rem;" *ngFor="let recipe of recipes">
+            <img [src]="recipe.imagePath" style="height: 200px;" class="card-img-top" alt="{{recipe.imagePath}}">
+            <div class="card-body" >
+              <h5 class="card-title">{{ recipe.name}}</h5>
+              <p class="card-text">{{recipe.description}}</p>
+              <a href="#" class="btn btn-primary">View recipe</a>
+            </div>
+          </div>
+    </div>
+</div>
