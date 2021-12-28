@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-basic-app';
+  username = '';
+
+  onUpdateUsername(event: Event){
+    return this.username = (<HTMLInputElement>event.target).value;
+  }
+
+  onResetUsername(){
+    return this.username = '';
+  }
 }
