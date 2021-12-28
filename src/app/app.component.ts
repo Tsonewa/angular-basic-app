@@ -3,17 +3,33 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styles: [`.online {color: white}`]
 })
 export class AppComponent {
   title = 'angular-basic-app';
   username = '';
+  userIsLogin = false;
+  status = '';
 
+  getStatus(){
+    return this.username === '' ? 'offline' : 'online';
+  }
+
+  getColor(){
+    return this.status == 'offline' ? 'red' : 'green';
+  }
+  
   onUpdateUsername(event: Event){
-    return this.username = (<HTMLInputElement>event.target).value;
+    this.userIsLogin = true;
+    this.username = (<HTMLInputElement>event.target).value;
   }
 
   onResetUsername(){
-    return this.username = '';
+    this.username = '';
+    this.status = 'offline';
+  }
+
+  getCurrentUser(){
+    return this.username;
   }
 }
