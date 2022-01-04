@@ -3,13 +3,13 @@
     <form>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Name</label>
-          <input type="text" class="form-control" id="inputName">
+          <input type="text" class="form-control" id="inputName" #nameInput>
         </div>
         <div class="mb-3">
           <label for="amount" class="form-label">Amount</label>
-          <input type="number" class="form-control" id="amount">
+          <input type="number" class="form-control" id="amount" #amountInput>
         </div>
-        <button type="submit" class="btn btn-success">Add</button>
+        <button type="submit" class="btn btn-success" (click)="onAddItem()">Add</button>
         <button type="submit" class="btn btn-danger">Delete</button>
         <button type="submit" class="btn btn-primary">Clear</button>
     </form>
