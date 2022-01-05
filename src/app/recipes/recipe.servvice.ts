@@ -1,7 +1,9 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Ingredient } from '../ingredient/ingredient.model';
+import { ShoppingListService } from '../shoping-list/shoppinglist.service';
 import { Recipe } from './recipe.model';
 
+@Injectable()
 export class RecipeService{
 recipeSelected = new EventEmitter<Recipe>();
 
@@ -13,9 +15,13 @@ recipeSelected = new EventEmitter<Recipe>();
         'https://www.simplyrecipes.com/thmb/qu-AslBeskzh_HG9H0dQAmcrdLQ=/648x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__simply_recipes__uploads__2019__09__easy-pepperoni-pizza-lead-4-82c60893fcad4ade906a8a9f59b8da9d.jpg', 
         [new Ingredient('Flour', 2),  new Ingredient('Pepperoni', 5), new Ingredient('Cheese', 2)])];
 
+constructor(private slService: ShoppingListService){}
 
         getRecipes(){
             return this.recipes.slice();
         }
 
+        addIngredientsToSHopingList(ingredients: Ingredient[]){
+            this.slService.addIngredients(ingredients);
+        }
     }
