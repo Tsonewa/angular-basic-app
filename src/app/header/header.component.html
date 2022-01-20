@@ -4,19 +4,19 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#" (click)="onSelect('shopping-list')">Shopping List</a>
+          <a class="nav-link" routerLink="shopping-list" >Shopping List</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" (click)="onSelect('recipes')">Recipes</a>
+          <a class="nav-link" routerLink="recipes">Recipes</a>
         </li>
         <li class="nav-item dropdown" >
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"  >
+          <a style="cursor: pointer;" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"  >
             Manage
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" appDropdown>
-            <li><a class="dropdown-item" href="#">To Shopping List</a></li>
-            <li><a class="dropdown-item" href="#">Edit recipe</a></li>
-            <li><a class="dropdown-item" href="#">Delete recipe</a></li>
+            <li><a class="dropdown-item" routerLink="shopping-list">To Shopping List</a></li>
+            <li><a style="cursor: pointer;" class="dropdown-item" >Edit recipe</a></li>
+            <li><a style="cursor: pointer;" class="dropdown-item" >Delete recipe</a></li>
           </ul>
         </li>
       </ul>
