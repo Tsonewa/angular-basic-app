@@ -30,4 +30,9 @@ getIngredient(index: number){
         this.ingredientListChanged.next(this.ingredients.slice());
     }
 
+    deleteIngredient(index: number){
+        this.ingredients.splice(index, 1);
+        this.ingredientListChanged.next(this.ingredients.slice());
+    }
+
 }
