@@ -1,4 +1,3 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component,  OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Recipe } from '../recipe.model';
@@ -20,8 +19,8 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(
     (params: Params) => { 
-this.id = params[Number('id')];
-console.log(this.id);
+this.id = +params.id;
+
 this.recipe = this.recipeService.getRecipe(this.id);
     }
     );

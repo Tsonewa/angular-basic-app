@@ -15,7 +15,7 @@ editMode = false;
   ngOnInit() {
     this.route.params.subscribe(
 (params: Params) => {
-  this.id = params[Number('id')];
+  this.id = +params.id;
   this.editMode = params['id'] != null;
 }
     );
